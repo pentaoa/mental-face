@@ -44,7 +44,6 @@ face-search-app/
 ## 🛠️ 安装 & 运行
 ### **1️⃣ 安装前端**
 ```sh
-cd frontend
 npm install
 npm run dev
 ```

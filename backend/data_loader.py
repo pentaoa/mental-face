@@ -2,13 +2,12 @@ import os
 import numpy as np
 from clip_model import extract_feature
 
-DATASET_PATH = "./dataset0/"
+DATASET_PATH = "./public/dataset/"
 FEATURES_PATH = "./dataset_features.npy"
 
 # 读取 100 张图片并计算特征
 def preprocess_dataset():
-    image_paths = [os.path.join(DATASET_PATH, f) for f in os.listdir(DATASET_PATH) if f.endswith(".jpg")]
-    image_paths = image_paths[:100]  # 仅使用 100 张
+    image_paths = [os.path.join(DATASET_PATH, f"{str(i+1).zfill(4)}/test.jpg") for i in range(100)]
     features = np.array([extract_feature(img) for img in image_paths])
 
     np.save(FEATURES_PATH, features)
